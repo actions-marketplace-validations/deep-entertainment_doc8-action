@@ -1,4 +1,4 @@
-# doc8 docker action
+# doc8-check docker action
 
 This action checks paths of ReST files using [doc8](https://github.com/pycqa/doc8)
 

@@ -1,5 +1,5 @@
 # action.yml
-name: 'doc8'
+name: 'doc8-check'
 description: 'A GitHub action that scans documentations with doc8 and reports failures'
 inputs:
   scan-paths:
