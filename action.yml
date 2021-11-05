@@ -1,0 +1,30 @@
+# action.yml
+name: 'doc8'
+description: 'A GitHub action that scans documentations with doc8 and reports failures'
+inputs:
+  scan-paths:
+    description: "Comma separated list of paths to scan"
+    required: true
+    default: "."
+  ignore-paths:
+    description: "Comma separated list of paths to ignore"
+    required: false
+    default: ""
+  add-annotations:
+    description: "Wether to add annotations on errors"
+    required: false
+    default: "true"
+outputs:
+  files_selected:
+    description: 'Files selected'
+  files_ignored:
+    description: 'Files ignored'
+  total_errors:
+    description: 'Total errors'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    IGNORE_PATHS: ${{ inputs.ignore-path }}
+    SCAN_PATHS: ${{ input.scan-paths }}
+    ADD_ANNOTATIONS: ${{ input.add-annotations }}
