@@ -29,5 +29,5 @@ runs:
   image: 'Dockerfile'
   env:
     IGNORE_PATHS: ${{ inputs.ignore-path }}
-    SCAN_PATHS: ${{ input.scan-paths }}
-    ADD_ANNOTATIONS: ${{ input.add-annotations }}
+    SCAN_PATHS: ${{ inputs.scan-paths }}
+    ADD_ANNOTATIONS: ${{ inputs.add-annotations }}
