@@ -7,6 +7,8 @@ try:
         ignore_path=os.environ.get("INPUT_IGNOREPATHS").split(',')
     )
 
+    print("::group::doc8-check")
+
     print("::set-output name=files_selected::%d" % result.files_selected)
     print("::set-output name=files_ignored::%d" % result.files_ignored)
     print("::set-output name=total_errors::%d" % result.total_errors)
@@ -20,8 +22,16 @@ try:
                 error[3],
                 error[4]
             ))
+            print("Found error %s (%s) in %s on line %d" % (
+                error[4],
+                error[3],
+                error[1],
+                error[2]
+            ))
 
     print(result.report())
+
+    print("::endgroup::")
 
     if result.total_errors > 0:
         exit(1)
