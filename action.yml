@@ -1,6 +1,9 @@
 # action.yml
 name: 'doc8-check'
 description: 'A GitHub action that scans documentations with doc8 and reports failures'
+branding:
+  icon: check-square
+  color: green
 inputs:
   scan-paths:
     description: "Comma separated list of paths to scan"
