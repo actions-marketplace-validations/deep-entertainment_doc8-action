@@ -5,15 +5,15 @@ branding:
   icon: check-square
   color: green
 inputs:
-  scan-paths:
+  scanPaths:
     description: "Comma separated list of paths to scan"
     required: true
     default: "."
-  ignore-paths:
+  ignorePaths:
     description: "Comma separated list of paths to ignore"
     required: false
     default: ""
-  add-annotations:
+  addAnnotations:
     description: "Wether to add annotations on errors"
     required: false
     default: "true"
@@ -27,7 +27,3 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    IGNORE_PATHS: ${{ inputs.ignore-path }}
-    SCAN_PATHS: ${{ inputs.scan-paths }}
-    ADD_ANNOTATIONS: ${{ inputs.add-annotations }}

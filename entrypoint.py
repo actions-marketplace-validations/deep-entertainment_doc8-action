@@ -3,15 +3,15 @@ import os
 
 try:
     result = doc8(
-        paths=os.environ.get("SCAN_PATHS").split(','),
-        ignore_path=os.environ.get("IGNORE_PATHS").split(',')
+        paths=os.environ.get("INPUT_SCANPATHS").split(','),
+        ignore_path=os.environ.get("INPUT_IGNOREPATHS").split(',')
     )
 
     print("::set-output name=files_selected::%d" % result.files_selected)
     print("::set-output name=files_ignored::%d" % result.files_ignored)
     print("::set-output name=total_errors::%d" % result.total_errors)
 
-    if os.environ.get("ADD_ANNOTATIONS") == 'true':
+    if os.environ.get("INPUT_ADDANNOTATIONS") == 'true':
         for error in result.errors:
             print("::error file=%s,line=%d,endLine=%d,title=%s::%s" % (
                 error[1],
