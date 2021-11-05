@@ -33,8 +33,9 @@ Total number of errors.
 ## Example usage
 
 ```
-uses: actions/doc8-action@v1
-with:
-  scan-paths: "/doc"
-  ignore-paths: "/doc/_build"
+- name: doc8-check
+  uses: deep-entertainment/doc8-action@v1
+  with:
+    scan-paths: "/doc"
+    ignore-paths: "/doc/_build"
 ```
